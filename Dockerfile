@@ -9,6 +9,6 @@ RUN go mod download
 
 RUN go build -o patientapi .
 
-EXPOSE 1000
+EXPOSE 8080
 
 CMD ["./patientapi"]
