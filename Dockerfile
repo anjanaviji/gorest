@@ -1,6 +1,5 @@
 FROM golang:latest
 
-RUN apk add --no-cache git
 
 RUN mkdir /app
 ADD . /app
