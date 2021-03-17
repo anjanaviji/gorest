@@ -40,7 +40,7 @@ func handleRequests() {
 	router.HandleFunc("/patient/{id}", viewPatient)
 	router.HandleFunc("/patient", createPatient).Methods("POST")
 	router.HandleFunc("/patient", updatePatient).Methods("PUT")
-	http.ListenAndServe(":1000", router)
+	http.ListenAndServe(":8080", router)
 	// http.HandleFunc("/", multiplexer)
 
 	// http.ListenAndServe(":1000", nil)
