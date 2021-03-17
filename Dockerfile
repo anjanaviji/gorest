@@ -1,4 +1,6 @@
-FROM golang:1.12.0-alpine3.9
+FROM golang:latest
+
+RUN apk add --no-cache git
 
 RUN mkdir /app
 ADD . /app
@@ -6,10 +8,8 @@ WORKDIR /app
 
 RUN go mod download
 
-RUN go get install github.com/gorilla/mux
-
-RUN go build -o main .
+RUN go build -o patientapi .
 
 EXPOSE 8080
 
-CMD ["./main"]
+CMD ["./patientapi"]
