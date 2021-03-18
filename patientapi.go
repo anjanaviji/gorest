@@ -37,7 +37,7 @@ func handleRequests() {
 
 	router := mux.NewRouter()
 	router.HandleFunc("/patient/{id}", deletePatient).Methods("DELETE")
-	router.HandleFunc("/patient/{id}", viewPatient)
+	router.HandleFunc("/patient/{id}", viewPatient).Methods("GET")
 	router.HandleFunc("/patient", createPatient).Methods("POST")
 	router.HandleFunc("/patient", updatePatient).Methods("PUT")
 	http.ListenAndServe(":8080", router)
